@@ -3,7 +3,7 @@ from player import Player
 
 DATA_SOURCE = "https://api.npoint.io/d770aef14b139c431879"
 
-print("Ввведите имя игрока")
+print("Введите имя игрока")
 user_name = input()
 
 player = Player(user_name)
@@ -18,12 +18,11 @@ while player.count_used_words() < basic_word.count_sub_words():
 
     user_input = input().strip().lower()
 
-    if user_input in ["stop", "стоп"]:
+    if user_input in ["stop", "стоп", "хватит"]:
         break
 
     elif len(user_input) < 3:
         print("короткое слово")
-        continue
 
     elif not basic_word.has_sub_word(user_input):
         print("Нет такого слова")
