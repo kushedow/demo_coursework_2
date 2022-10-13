@@ -1,5 +1,9 @@
 class Player:
 
+    """
+    Сохраняет информацию об игроке – имя и угаданные слова
+    """
+
     def __init__(self, name=""):
         self.name = name
         self.used_words = []
@@ -7,14 +11,8 @@ class Player:
     def __repr__(self):
         return f"""Player({self.name}, {self.used_words})"""
 
-
-    def is_word_used(self, word):
-        """
-        проверка использования данного слова до этого
-        :param word: слвоо
-        :return: было ли использовано
-        """
-        return word.lower() in self.used_words
+    def get_name(self):
+        return self.name
 
     def add_word(self, word):
         """
@@ -23,8 +21,13 @@ class Player:
         """
         self.used_words.append(word)
 
-    def get_name(self):
-        return self.name
+    def is_word_used(self, word):
+        """
+        проверка использования данного слова до этого
+        :param word: слвоо
+        :return: было ли использовано
+        """
+        return word.lower() in self.used_words
 
     def count_used_words(self):
         """
